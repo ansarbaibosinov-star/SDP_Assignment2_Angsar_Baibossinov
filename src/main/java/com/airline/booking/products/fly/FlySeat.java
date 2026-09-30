@@ -1,18 +1,14 @@
-package com.airline.booking.products.jet;
+package com.airline.booking.products.fly;
 
 import com.airline.booking.products.Seat;
 
-public class JetSeat implements Seat {
+public class FlySeat implements Seat {
 
     private final String seatNumber;
     private final String classType;
     private final double price;
 
-    public JetSeat(
-            String seatNumber,
-            String classType,
-            double price
-    ) {
+    public FlySeat(String seatNumber, String classType, double price) {
         this.seatNumber = seatNumber;
         this.classType = classType;
         this.price = price;
@@ -32,5 +28,4 @@ public class JetSeat implements Seat {
     public double getPrice() {
         return price;
     }
-
 }

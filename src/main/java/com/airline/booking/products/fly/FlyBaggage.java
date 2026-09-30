@@ -1,19 +1,13 @@
-package com.airline.booking.products.airastana;
+package com.airline.booking.products.fly;
 
 import com.airline.booking.products.Baggage;
 
-public class AirAstanaBaggage implements Baggage {
+public class FlyBaggage implements Baggage {
 
     private final int weight;
     private final double price;
 
-    public AirAstanaBaggage(int weight, double price) {
-        if (weight <= 0) {
-            throw new IllegalArgumentException(
-                    "Baggage weight must be positive"
-            );
-        }
-
+    public FlyBaggage(int weight, double price) {
         this.weight = weight;
         this.price = price;
     }
@@ -27,6 +21,4 @@ public class AirAstanaBaggage implements Baggage {
     public double getPrice() {
         return price;
     }
-
-
 }

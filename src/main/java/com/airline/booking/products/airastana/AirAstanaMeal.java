@@ -22,8 +22,5 @@ public class AirAstanaMeal implements Meal {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "Air Astana";
-    }
+
 }

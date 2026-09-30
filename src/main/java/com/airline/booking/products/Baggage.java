@@ -5,6 +5,4 @@ public interface Baggage {
     int getWeight();
 
     double getPrice();
-
-    String getAirline();
 }

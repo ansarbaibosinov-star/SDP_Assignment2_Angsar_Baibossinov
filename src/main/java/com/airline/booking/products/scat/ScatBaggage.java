@@ -23,13 +23,9 @@ public class ScatBaggage implements Baggage {
         return weight;
     }
 
-    @Override
+
     public double getPrice() {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "SCAT";
-    }
 }

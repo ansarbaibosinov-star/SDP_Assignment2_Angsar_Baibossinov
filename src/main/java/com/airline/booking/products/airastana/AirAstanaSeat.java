@@ -33,8 +33,5 @@ public class AirAstanaSeat implements Seat {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "Air Astana";
-    }
+
 }

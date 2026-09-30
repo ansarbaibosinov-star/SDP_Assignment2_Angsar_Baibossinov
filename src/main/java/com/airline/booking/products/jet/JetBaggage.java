@@ -28,8 +28,5 @@ public class JetBaggage implements Baggage {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "Jet";
-    }
+
 }

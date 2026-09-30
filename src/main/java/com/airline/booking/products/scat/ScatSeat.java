@@ -33,8 +33,5 @@ public class ScatSeat implements Seat {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "SCAT";
-    }
+
 }

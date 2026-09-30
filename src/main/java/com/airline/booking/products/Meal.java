@@ -5,6 +5,4 @@ public interface Meal {
     String getMealType();
 
     double getPrice();
-
-    String getAirline();
 }

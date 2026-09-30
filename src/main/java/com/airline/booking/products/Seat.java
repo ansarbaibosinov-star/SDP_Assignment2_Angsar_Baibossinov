@@ -7,6 +7,4 @@ public interface Seat {
     String getClassType();
 
     double getPrice();
-
-    String getAirline();
 }

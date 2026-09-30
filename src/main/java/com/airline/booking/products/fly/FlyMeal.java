@@ -1,13 +1,13 @@
-package com.airline.booking.products.jet;
+package com.airline.booking.products.fly;
 
 import com.airline.booking.products.Meal;
 
-public class JetMeal implements Meal {
+public class FlyMeal implements Meal {
 
     private final String mealType;
     private final double price;
 
-    public JetMeal(String mealType, double price) {
+    public FlyMeal(String mealType, double price) {
         this.mealType = mealType;
         this.price = price;
     }
@@ -21,6 +21,4 @@ public class JetMeal implements Meal {
     public double getPrice() {
         return price;
     }
-
-
 }

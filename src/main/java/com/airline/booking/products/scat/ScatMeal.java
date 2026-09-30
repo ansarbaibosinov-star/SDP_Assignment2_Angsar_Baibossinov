@@ -22,8 +22,6 @@ public class ScatMeal implements Meal {
         return price;
     }
 
-    @Override
-    public String getAirline() {
-        return "SCAT";
-    }
+
+
 }

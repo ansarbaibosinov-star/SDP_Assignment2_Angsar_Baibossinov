@@ -12,6 +12,8 @@ public class FactoryProvider {
 
             case "jet" -> new JetFactory();
 
+            case "fly" -> new FlyFactory();
+
             default -> throw new IllegalArgumentException(
                     "Unknown airline: " + airline
             );
