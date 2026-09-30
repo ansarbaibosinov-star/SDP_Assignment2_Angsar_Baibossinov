@@ -11,5 +11,7 @@ public interface AirlineFactory {
     Meal createMeal();
 
     Baggage createBaggage();
+
+    AirlineProductBundle createProductBundle();
 }
 //Любая авиакомпания должна уметь создать Seat, Meal и Baggage

@@ -23,4 +23,13 @@ public class ScatFactory implements AirlineFactory {
     public Baggage createBaggage() {
         return new ScatBaggage(20, 7000);
     }
+
+    @Override
+    public AirlineProductBundle createProductBundle() {
+        return new ScatProductBundle(
+                createSeat(),
+                createMeal(),
+                createBaggage()
+        );
+    }
 }

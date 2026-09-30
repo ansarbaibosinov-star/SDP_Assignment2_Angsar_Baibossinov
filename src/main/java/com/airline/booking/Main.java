@@ -1,10 +1,8 @@
 package com.airline.booking;
 
 import com.airline.booking.abstractfactory.AirlineFactory;
+import com.airline.booking.abstractfactory.AirlineProductBundle;
 import com.airline.booking.abstractfactory.AirAstanaFactory;
-import com.airline.booking.products.Baggage;
-import com.airline.booking.products.Meal;
-import com.airline.booking.products.Seat;
 
 public class Main {
 
@@ -12,21 +10,26 @@ public class Main {
 
         AirlineFactory factory = new AirAstanaFactory();
 
-        Seat seat = factory.createSeat();
-        Meal meal = factory.createMeal();
-        Baggage baggage = factory.createBaggage();
+        AirlineProductBundle products =
+                factory.createProductBundle();
 
-        System.out.println("Airline: " + seat.getAirline());
-        System.out.println("Seat: " + seat.getSeatNumber());
-        System.out.println("Meal: " + meal.getMealType());
-        System.out.println("Baggage: " + baggage.getWeight() + " kg");
+        System.out.println("Airline: " + products.getAirline());
 
-        System.out.println();
+        System.out.println(
+                "Seat: " + products.getSeat().getSeatNumber()
+        );
 
-        double total = seat.getPrice()
-                + meal.getPrice()
-                + baggage.getPrice();
+        System.out.println(
+                "Meal: " + products.getMeal().getMealType()
+        );
 
-        System.out.println("Products total: " + total);
+        System.out.println(
+                "Baggage: " + products.getBaggage().getWeight() + " kg"
+        );
+
+        System.out.println(
+                "Products total: "
+                        + products.calculateProductsPrice()
+        );
     }
 }

@@ -23,4 +23,13 @@ public class JetFactory implements AirlineFactory {
     public Baggage createBaggage() {
         return new JetBaggage(20, 9000);
     }
+
+    @Override
+    public AirlineProductBundle createProductBundle() {
+        return new JetProductBundle(
+                createSeat(),
+                createMeal(),
+                createBaggage()
+        );
+    }
 }

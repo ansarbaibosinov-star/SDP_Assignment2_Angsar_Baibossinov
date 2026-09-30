@@ -23,4 +23,13 @@ public class AirAstanaFactory implements AirlineFactory {
     public Baggage createBaggage() {
         return new AirAstanaBaggage(20, 8000);
     }
+
+    @Override
+    public AirlineProductBundle createProductBundle() {
+        return new AirAstanaProductBundle(
+                createSeat(),
+                createMeal(),
+                createBaggage()
+        );
+    }
 }
