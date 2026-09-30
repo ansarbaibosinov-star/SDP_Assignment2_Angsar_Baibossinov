@@ -1,36 +1,32 @@
 package com.airline.booking;
 
-import com.airline.booking.factorymethod.AirAstanaBookingCreator;
-import com.airline.booking.factorymethod.AirlineBooking;
-import com.airline.booking.factorymethod.BookingCreator;
-import com.airline.booking.factorymethod.JetBookingCreator;
-import com.airline.booking.factorymethod.ScatBookingCreator;
+import com.airline.booking.abstractfactory.AirlineFactory;
+import com.airline.booking.abstractfactory.AirAstanaFactory;
+import com.airline.booking.products.Baggage;
+import com.airline.booking.products.Meal;
+import com.airline.booking.products.Seat;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        BookingCreator airAstanaCreator =
-                new AirAstanaBookingCreator();
+        AirlineFactory factory = new AirAstanaFactory();
 
-        BookingCreator scatCreator =
-                new ScatBookingCreator();
+        Seat seat = factory.createSeat();
+        Meal meal = factory.createMeal();
+        Baggage baggage = factory.createBaggage();
 
-        BookingCreator jetCreator =
-                new JetBookingCreator();
-
-        AirlineBooking airAstanaBooking =
-                airAstanaCreator.processBooking(50000, 5000);
-
-        AirlineBooking scatBooking =
-                scatCreator.processBooking(45000, 4000);
-
-        AirlineBooking jetBooking =
-                jetCreator.processBooking(60000, 7000);
+        System.out.println("Airline: " + seat.getAirline());
+        System.out.println("Seat: " + seat.getSeatNumber());
+        System.out.println("Meal: " + meal.getMealType());
+        System.out.println("Baggage: " + baggage.getWeight() + " kg");
 
         System.out.println();
-        System.out.println(airAstanaBooking.getDescription());
-        System.out.println(scatBooking.getDescription());
-        System.out.println(jetBooking.getDescription());
+
+        double total = seat.getPrice()
+                + meal.getPrice()
+                + baggage.getPrice();
+
+        System.out.println("Products total: " + total);
     }
 }
